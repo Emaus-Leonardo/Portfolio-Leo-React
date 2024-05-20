@@ -12,7 +12,11 @@ function About() {
     <motion.section className="section overflow-y-scroll overflow-x-hidden">
       <div className="flex justify-between items-center h-screen p-8 lg:p-16 gap-16">
         <div className="mt-40 ">
-          <motion.div className="relative overflow-hidden rounded-lg ml-16 w-[500px] h-auto">
+          <motion.div 
+          initial={{ opacity: 0, y: "80%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "80%" }}
+          transition={transition1}className="relative overflow-hidden rounded-lg ml-16 w-[500px] h-auto">
             <img src={ProfileAbout} alt="Profile" className="w-full h-auto" />
           </motion.div>
         </div>
