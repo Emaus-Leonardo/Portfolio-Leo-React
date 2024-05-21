@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileAbout from "../../../public/img/profileAbout.png";
+import ProfileAbout from "../../../public/img/ProfileAbout.png";
 import Mugetsu from "../../../public/img/mugetsu.jpeg";
 import Hiro from "../../../public/img/hiro.jpeg";
 import Haku from "../../../public/img/haku.jpg";

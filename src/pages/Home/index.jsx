@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Github from "../../../public/img/github_icon.svg";
-
+import teste from "../../../public/img/triangleWhite.png";
 import Smooth from "../../SmoothTransition";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -50,13 +49,14 @@ function Home() {
   return (
     <motion.section className="section overflow-y-scroll overflow-x-hidden ">
       <motion.div
-        initial={{ opacity: 0, rotate: -32, x: "80%" }}
+        initial={{ opacity: 0, x: "80%" }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "80%" }}
         transition={Smooth}
-        className="absolute bg-white w-[4000px] h-[2000px] -left-[1000px] 
-        xl:-left-[900px] xxl:-left-[350px] md:-left-[800px] lg:-left-[900px] lg:top-[350px] top-[200px] xl:top-[400px] mix-blend-difference"
-      />
+        className="absolute mix-blend-difference -left-96 top-32 lg:-left-56 lg:-top-0 xl:-left-72 xl:-top-0 xxl:left-3 xxl:-top-16"
+      >
+        <img src={teste} className="w-[3500px] h-[1000px] " />
+      </motion.div>
 
       <div className="container mx-auto h-full relative mix-blend-difference">
         <div className="flex justify-center lg:justify-center items-center h-screen relative z-10">

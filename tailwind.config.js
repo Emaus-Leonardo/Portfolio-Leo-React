@@ -4,7 +4,6 @@ export default {
   theme: {
      fontFamily: {
       primary: ['Inter', 'sans-serif'],
-      
     },
     screens: {
       sm: '640px',
