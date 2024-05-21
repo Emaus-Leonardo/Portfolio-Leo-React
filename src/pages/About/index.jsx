@@ -43,64 +43,22 @@ function About() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "80%" }}
             transition={Smooth}
-            className="flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start mx-7 lg:mt-24"
+            className="flex-1 pt-56 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start mx-7 lg:mt-24"
           >
             <h1 className="h1 font-bold">About Me</h1>
             <p className="mb-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque augue odio,
-              <br /> fermentum vel venenatis quis, sollicitudin quis purus.
-              <br />
-              <br />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              earum quidem adipisci <br /> sunt a quae, aut consectetur, br
-              veniam placeat incidunt quaerat obcaecati inventore, <br />{" "}
-              dignissimos repellat consequuntur voluptas beatae facilis iusto?
+              Olá, meu nome é Emaús Leonardo, mas pode me chamar de Léo. No
+              momento, <br /> estou mergulhando no mundo do desenvolvimento Front End
+              com o objetivo de <br /> aprimorar minhas habilidades para me posicionar
+              no mercado. Sou apaixonado <br /> por criar experiências online
+              impressionantes para os usuários e acompanhar as <br /> melhores práticas
+              e tendências. Meu portfólio demonstra o que já fiz até agora e <br />
+              minha determinação em me tornar um desenvolvedor Front End
+              excepcional. <br /> Estou disposto a trabalhar em projetos desafiadores e
+              ajudar equipes criativas e <br /> dinâmicas.
             </p>
-            <motion.div
-              initial={{ opacity: 0, y: "80%" }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: "60%" }}
-              transition={Smooth}
-              className="flex justify-center items-center gap-7"
-            >
-              <div className="w-[100px] h-[100px] relative overflow-hidden rounded-md">
-                <motion.img
-                  src={Mugetsu}
-                  alt=""
-                  whileHover={{ scale: 1.1 }}
-                  transition={Smooth}
-                />
-              </div>
-              <motion.div
-                initial={{ opacity: 0, y: "40%" }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: "40%" }}
-                transition={Smooth}
-                className="w-[100px] h-[100px] relative overflow-hidden rounded-md"
-              >
-                <motion.img
-                  src={Hiro}
-                  alt=""
-                  whileHover={{ scale: 1.1 }}
-                  transition={Smooth}
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: "60%" }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: "80%" }}
-                transition={Smooth}
-                className="w-[100px] h-[100px] relative overflow-hidden rounded-md"
-              >
-                <motion.img
-                  src={Haku}
-                  alt=""
-                  whileHover={{ scale: 1.1 }}
-                  transition={Smooth}
-                />
-              </motion.div>
-            </motion.div>
+
+
             <motion.div
               initial={{ opacity: 0, y: "100%" }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,7 +67,8 @@ function About() {
             >
               <Link
                 to="/projects"
-                className="w-[230px] h-[60px] bg-[black] flex justify-center items-center rounded-md text-white font-bold mt-7 hover:shadow-lg transition-all"
+                className="w-[230px] h-[60px] bg-[black] flex justify-center items-center 
+                text-white font-bold mt- hover:shadow-lg transition-all"
               >
                 My Projects
               </Link>

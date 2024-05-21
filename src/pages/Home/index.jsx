@@ -53,9 +53,13 @@ function Home() {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "80%" }}
         transition={Smooth}
-        className="absolute mix-blend-difference -left-96 top-32 lg:-left-56 lg:-top-0 xl:-left-72 xl:-top-0 xxl:left-3 xxl:-top-16"
+        className="absolute mix-blend-difference -left-[400px] top-32 
+        md:-left-[700px]
+        lg:-left-[700px] lg:-top-0 
+        xl:-left-[700px] xl:-top-0 
+        xxl:-left-[500px] xxl:-top-12"
       >
-        <img src={teste} className="w-[3500px] h-[1000px] " />
+        <img src={teste} className="w-[3500px] h-[1260px]  " />
       </motion.div>
 
       <div className="container mx-auto h-full relative mix-blend-difference">
