@@ -51,10 +51,11 @@ function Home() {
     <motion.section className="section overflow-y-scroll overflow-x-hidden ">
       <motion.div
         initial={{ opacity: 0, rotate: -32, x: "80%" }}
-        animate={{ opacity: 1, rotate: -32, x: 0 }}
-        exit={{ opacity: 0, rotate: -32, x: "80%" }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: "80%" }}
         transition={Smooth}
-        className="absolute bg-white w-[3000px] h-full rotate-0 -left-[200px] xl:left-[10px] lg:left-24 lg:top-[350px] top-[200px] xl:top-[400px] mix-blend-difference"
+        className="absolute bg-white w-[4000px] h-[2000px] -left-[1000px] 
+        xl:-left-[900px] xxl:-left-[350px] md:-left-[800px] lg:-left-[900px] lg:top-[350px] top-[200px] xl:top-[400px] mix-blend-difference"
       />
 
       <div className="container mx-auto h-full relative mix-blend-difference">
@@ -66,15 +67,21 @@ function Home() {
             exit={{ opacity: 0, y: "-100%" }}
             transition={Smooth}
           >
-            <h1 className="text-4xl lg:text-8xl font-bold text-white ">
+            <motion.h1
+              initial={{ opacity: 0, y: "-100%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "-50%" }}
+              transition={Smooth}
+              className="text-4xl lg:text-8xl font-bold text-white "
+            >
               HI, I'M LÉO
-            </h1>
+            </motion.h1>
             <motion.h2
               initial={{ opacity: 0, y: "-50%" }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "-100%" }}
               transition={Smooth}
-              className="text-xl lg:text-3xl font-bold text-white"
+              className="text-[14px] lg:text-3xl font-bold text-white"
             >
               I'M {text}
             </motion.h2>
@@ -83,9 +90,10 @@ function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "-70%" }}
               transition={Smooth}
-              className="flex flex-col lg:flex-row justify-center lg:justify-start items-center "            >
+              className="flex flex-col lg:flex-row justify-center lg:justify-start items-center "
+            >
               <Link to="/about">
-                <button className="w-[210px] h-[55px] bg-white text-black font-bold mt-7 hover:shadow-lg transition-all">
+                <button className="w-[210px] h-[55px] bg-white text-black font-bold lg:mt-7 mt-2 hover:shadow-lg transition-all">
                   About Me
                 </button>
               </Link>
@@ -94,7 +102,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "-70%" }}
                 transition={Smooth}
-                className="flex px-5 mt-10 gap-2"
+                className="flex px-5 xl:mt-10 lg:mt-10 mt-5 gap-2"
               >
                 <a
                   href="https://github.com/Emaus-Leonardo"

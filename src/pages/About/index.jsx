@@ -14,7 +14,7 @@ function About() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={Smooth}
-      className="section overflow-y-scroll overflow-x-hidden bg-[#F0F4F9]"
+      className="section overflow-y-scroll overflow-x-hidden"
     >
       <div className="container mx-auto h-full relative flex items-center justify-center">
         <div
