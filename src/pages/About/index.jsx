@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileAbout from "../../../public/img/ProfileAbout.png";
+import ProfileAbout from "../../../public/img/profileAbout.png";
 import { motion } from "framer-motion";
 import Smooth from "../../SmoothTransition";
 import { Link } from "react-router-dom";

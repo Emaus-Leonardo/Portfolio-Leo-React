@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Home() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["A FRONT-END DEVELOPER", "A VIDEO EDITOR"];
+  const toRotate = ["FRONT-END DEVELOPER", "VIDEO EDITOR"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(150);
   const period = 2000;
@@ -87,7 +87,7 @@ function Home() {
               transition={Smooth}
               className="text-[14px] lg:text-3xl font-bold text-white"
             >
-              I'M {text}
+              I'M A {text}
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: "-50%" }}
