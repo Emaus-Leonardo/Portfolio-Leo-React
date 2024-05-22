@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileAbout from "../../../public/img/ProfileAbout.png";
+import ProfileAbout from "../../../public/img/profileAbout.png";
 import Mugetsu from "../../../public/img/mugetsu.jpeg";
 import Hiro from "../../../public/img/hiro.jpeg";
 import Haku from "../../../public/img/haku.jpg";
@@ -27,14 +27,14 @@ function About() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "100%" }}
               transition={Smooth}
-              className="relative overflow-hidden flex-1"
+              className="relative overflow-hidden flex-1 rounded-md"
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}
                 transition={Smooth}
                 src={ProfileAbout}
                 alt="Profile"
-                className="w-full h-auto lg:max-w-[500px] mx-auto"
+                className="w-full h-auto lg:max-w-[500px] mx-auto "
               />
             </motion.div>
           </div>
