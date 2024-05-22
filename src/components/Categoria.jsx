@@ -18,9 +18,10 @@ function Categoria({ children }) {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="fixed   left-0 z-20 flex justify-center items-center w-[200px] h-auto bg-[#e5e5e5] p-4 rounded-lg shadow-lg">
+      <div className="fixed left-0 z-20 flex justify-center items-center w-[200px] 
+      h-auto bg-[#e5e5e5] p-4 rounded-lg shadow-lg">
         <div className="flex flex-col items-start">
-          <h2 className="mb-4 text-[15px] font-semibold">Selecione as Categorias:</h2>
+          <h2 className="mb-4 text-[15px] font-semibold">Categorias:</h2>
           {["HTML", "JavaScript", "React", "Python", "CSS", "Tailwind"].map(category => (
             <div key={category} className="mb-2">
               <label className="flex items-center">
@@ -38,7 +39,8 @@ function Categoria({ children }) {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-10 px-4">
+      <div className=" flex flex-wrap justify-center items-center gap-2 px-4 
+      mt-[110vh] xl:mt-0 lg:mt-0 md:mt-96">
         {filteredChildren}
       </div>
     </div>

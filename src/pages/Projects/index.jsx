@@ -20,8 +20,8 @@ function Projects() {
       className="section overflow-y-scroll overflow-x-hidden bg-[#F0F4F9]"
     >
       <div className=" mx-auto h-full relative flex items-center justify-center">
-        <div className="flex flex-col justify-center items-center mt-[110vh] md:mt-96 lg:mt-10">
-          <div className="flex flex-wrap justify-center mb-10 lg:mb-20 gap-6 md:gap-8 lg:gap-10 px-4">
+        <div className="flex flex-col justify-center items-center">
+          <div >
             <Categoria>
               <motion.div
                 initial={{ opacity: 0, y: "60%" }}
