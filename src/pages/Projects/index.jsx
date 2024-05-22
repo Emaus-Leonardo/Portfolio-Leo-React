@@ -31,7 +31,7 @@ function Projects() {
                 category={["Tailwind", "React"]}
               >
                 <Cards
-                  title="Weeding Album"
+                  title="{Weeding Album}"
                   img={Album}
                   github="https://github.com/Emaus-Leonardo/Weeding-album"
                   demo="https://weeding-album.vercel.app/"
@@ -47,7 +47,7 @@ function Projects() {
                 category={["HTML", "CSS", "JavaScript"]}
               >
                 <Cards
-                  title="Portfolio V-1"
+                  title="{Portfolio V-1}"
                   img={Portfolio}
                   github="https://github.com/Emaus-Leonardo/portfolio-leo"
                   demo="https://portfolio-leo-ecru.vercel.app/"
@@ -63,7 +63,7 @@ function Projects() {
                 category={["HTML", "JavaScript", "CSS"]}
               >
                 <Cards
-                  title="App Clima"
+                  title="{App Clima}"
                   img={AppClima}
                   github="https://github.com/Emaus-Leonardo/App-Clima"
                   demo="https://emaus-leonardo.github.io/App-Clima/"
@@ -79,7 +79,7 @@ function Projects() {
                 category={["HTML", "JavaScript", "CSS"]}
               >
                 <Cards
-                  title="To-Do-List"
+                  title="{To-Do-List}"
                   img={ToDoList}
                   github="https://github.com/Emaus-Leonardo/To-Do-List"
                   demo="https://emaus-leonardo.github.io/To-Do-List/"
@@ -95,10 +95,9 @@ function Projects() {
                 category={["Python"]}
               >
                 <Cards
-                  title="Refresh Shop"
+                  title="{Refresh Shop}"
                   img={RefreshShop}
                   github="https://github.com/Emaus-Leonardo/Refresh-Shop-App-Epic7"
-                  demo="#"
                   category={["Python"]}
                 />
               </motion.div>

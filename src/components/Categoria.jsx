@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Smooth from "../SmoothTransition";
 
 function Categoria({ children }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -8,39 +10,55 @@ function Categoria({ children }) {
     if (checked) {
       setSelectedCategories([...selectedCategories, name]);
     } else {
-      setSelectedCategories(selectedCategories.filter(category => category !== name));
+      setSelectedCategories(
+        selectedCategories.filter((category) => category !== name)
+      );
     }
   };
 
-  const filteredChildren = React.Children.toArray(children).filter(child =>
-    selectedCategories.length === 0 || selectedCategories.some(category => child.props.category.includes(category))
+  const filteredChildren = React.Children.toArray(children).filter(
+    (child) =>
+      selectedCategories.length === 0 ||
+      selectedCategories.some((category) =>
+        child.props.category.includes(category)
+      )
   );
 
   return (
     <div className="flex justify-center items-center">
-      <div className="fixed left-0 z-20 flex justify-center items-center w-[200px] 
-      h-auto bg-[#e5e5e5] p-4 rounded-lg shadow-lg">
+      <motion.div
+        initial={{ opacity: 0, x: "-100%" }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: "-100%" }}
+        transition={Smooth}
+        className="fixed left-0 z-20 flex justify-center items-center w-[150px] 
+      h-auto bg-white p-4 rounded-e-md shadow-lg"
+      >
         <div className="flex flex-col items-start">
-          <h2 className="mb-4 text-[15px] font-semibold">Categorias:</h2>
-          {["HTML", "JavaScript", "React", "Python", "CSS", "Tailwind"].map(category => (
-            <div key={category} className="mb-2">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name={category}
-                  checked={selectedCategories.includes(category)}
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {category}
-              </label>
-            </div>
-          ))}
+          <h2 className="mb-4 text-[15px] font-semibold">Technology:</h2>
+          {["HTML", "JavaScript", "React", "Python", "CSS", "Tailwind"].map(
+            (category) => (
+              <div key={category} className="mb-2 ">
+                <label className="flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name={category}
+                    checked={selectedCategories.includes(category)}
+                    onChange={handleCheckboxChange}
+                    className="mr-2 cursor-pointer"
+                  />
+                  {category}
+                </label>
+              </div>
+            )
+          )}
         </div>
-      </div>
+      </motion.div>
 
-      <div className=" flex flex-wrap justify-center items-center gap-2 px-4 
-      mt-[110vh] xl:mt-0 lg:mt-0 md:mt-96">
+      <div
+        className=" flex flex-wrap justify-center items-center gap-2 px-4 
+      mt-[110vh] xl:mt-0 lg:mt-0 md:mt-96 transition-all"
+      >
         {filteredChildren}
       </div>
     </div>
