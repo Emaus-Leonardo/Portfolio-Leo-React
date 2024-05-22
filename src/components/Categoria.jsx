@@ -36,7 +36,7 @@ function Categoria({ children }) {
       >
         <div className="flex flex-col items-start">
           <h2 className="mb-4 text-[15px] font-semibold">Technology:</h2>
-          {["HTML", "JavaScript", "React", "Python", "CSS", "Tailwind"].map(
+          {["HTML","CSS", "JavaScript", "React", "Python",  "Tailwind"].map(
             (category) => (
               <div key={category} className="mb-2 ">
                 <label className="flex items-center cursor-pointer">
@@ -55,11 +55,10 @@ function Categoria({ children }) {
         </div>
       </motion.div>
 
-      <div
-        className=" flex flex-wrap justify-center items-center gap-2 px-4 
-      mt-[110vh] xl:mt-0 lg:mt-0 md:mt-96 transition-all"
-      >
-        {filteredChildren}
+      <div className="flex h-screen p-8 pt-16">
+        <div className="flex flex-wrap justify-center items-center gap-4">
+          {filteredChildren}
+        </div>
       </div>
     </div>
   );

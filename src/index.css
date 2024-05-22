@@ -8,7 +8,7 @@ span {
 
 @layer base {
   body {
-    @apply overflow-hidden bg-white;
+    @apply text-primary  overflow-hidden bg-white;
   }
   .h1 {
     @apply text-[54px] lg:text-[80px] font-primary capitalize leading-[120%] tracking-[-0.05em] mb-2;

@@ -17,27 +17,11 @@ function Projects() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={Smooth}
-      className="section overflow-y-scroll overflow-x-hidden bg-[#F0F4F9]"
+      className="section overflow-y-auto overflow-x-hidden bg-[#F0F4F9] "
     >
-      <div className=" mx-auto h-full relative flex items-center justify-center">
-        <div className="flex flex-col justify-center items-center">
-          <div >
+      <div className="mx-auto h-full relative flex items-center justify-center ">
+        <div className="flex flex-col justify-center items-center container ">
             <Categoria>
-              <motion.div
-                initial={{ opacity: 0, y: "60%" }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: "100%" }}
-                transition={Smooth}
-                category={["Tailwind", "React"]}
-              >
-                <Cards
-                  title="{Weeding Album}"
-                  img={Album}
-                  github="https://github.com/Emaus-Leonardo/Weeding-album"
-                  demo="https://weeding-album.vercel.app/"
-                  category={["Tailwind", "React"]}
-                />
-              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: "90%" }}
@@ -86,6 +70,22 @@ function Projects() {
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: "60%" }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: "100%" }}
+                transition={Smooth}
+                category={["Tailwind", "React"]}
+              >
+                <Cards
+                  title="{Weeding Album}"
+                  img={Album}
+                  github="https://github.com/Emaus-Leonardo/Weeding-album"
+                  demo="https://weeding-album.vercel.app/"
+                  category={["Tailwind", "React"]}
+                />
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: "130%" }}
@@ -102,7 +102,6 @@ function Projects() {
                 />
               </motion.div>
             </Categoria>
-          </div>
         </div>
       </div>
     </motion.section>
