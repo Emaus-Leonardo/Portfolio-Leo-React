@@ -17,14 +17,15 @@ function Projects() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={Smooth}
-      className="section overflow-y-auto overflow-x-hidden bg-[#F0F4F9] "
+      className="section overflow-y-scroll overflow-x-hidden bg-[#F0F4F9]"
     >
-      <div className="mx-auto h-full relative flex items-center justify-center ">
-        <div className="flex flex-col justify-center items-center container ">
-            <Categoria>
+      <div className="mx-auto h-full relative flex items-center justify-center">
+        <div className="flex flex-col justify-center items-center">
 
+          <div className="flex flex-col justify-center items-center ">
+            <Categoria>
               <motion.div
-                initial={{ opacity: 0, y: "90%" }}
+                initial={{ opacity: 0, y: "30%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
                 transition={Smooth}
@@ -35,12 +36,12 @@ function Projects() {
                   img={Portfolio}
                   github="https://github.com/Emaus-Leonardo/portfolio-leo"
                   demo="https://portfolio-leo-ecru.vercel.app/"
+                  summary="Portfolio desenvolvido em HTML, CSS e JavaScript"
                   category={["HTML", "CSS"]}
                 />
               </motion.div>
-
               <motion.div
-                initial={{ opacity: 0, y: "110%" }}
+                initial={{ opacity: 0, y: "60%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
                 transition={Smooth}
@@ -51,12 +52,12 @@ function Projects() {
                   img={AppClima}
                   github="https://github.com/Emaus-Leonardo/App-Clima"
                   demo="https://emaus-leonardo.github.io/App-Clima/"
+                  summary="Aplicativo desenvolvido com intuito de aprendizagem em JavaScript, HTML e CSS"
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
-
               <motion.div
-                initial={{ opacity: 0, y: "120%" }}
+                initial={{ opacity: 0, y: "90%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
                 transition={Smooth}
@@ -67,12 +68,12 @@ function Projects() {
                   img={ToDoList}
                   github="https://github.com/Emaus-Leonardo/To-Do-List"
                   demo="https://emaus-leonardo.github.io/To-Do-List/"
+                  summary="To do List utilizando HTML, CSS e javaScript"
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
-              
               <motion.div
-                initial={{ opacity: 0, y: "60%" }}
+                initial={{ opacity: 0, y: "110%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
                 transition={Smooth}
@@ -83,10 +84,10 @@ function Projects() {
                   img={Album}
                   github="https://github.com/Emaus-Leonardo/Weeding-album"
                   demo="https://weeding-album.vercel.app/"
+                  summary="Album de Casamento Online para armazenar fotos, foi desenvolvido em React e TailWind."
                   category={["Tailwind", "React"]}
                 />
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: "130%" }}
                 animate={{ opacity: 1, y: 0 }}
@@ -98,10 +99,13 @@ function Projects() {
                   title="{Refresh Shop}"
                   img={RefreshShop}
                   github="https://github.com/Emaus-Leonardo/Refresh-Shop-App-Epic7"
+                  summary="Este é um programa de automação escrito em Python com a biblioteca PyAutoGUI e a estrutura de interface gráfica KivyMD.
+                  O objetivo do programa é automatizar o processo de atualização de uma loja virtual em um jogo, utilizando Python"
                   category={["Python"]}
                 />
               </motion.div>
             </Categoria>
+          </div>
         </div>
       </div>
     </motion.section>
