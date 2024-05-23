@@ -20,7 +20,7 @@ function MySkills() {
                 text-white font-bold mt- hover:shadow-lg transition-all"
             onClick={() => setShowWindow(true)}
           >
-            Toggle Window
+            Get Started
           </button>
         )}
 
