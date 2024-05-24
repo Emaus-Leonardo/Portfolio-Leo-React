@@ -54,7 +54,7 @@ function MySkills() {
             exit={{ opacity: 0, y: "100%" }}
             transition={Smooth}
             onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] flex flex-col shadow-custom rounded-ee-lg"
+            className="w-full max-w-[1100px] flex flex-col shadow-custom rounded-lg"
           >
             <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
               <p className="text-white text-[12px] font-bold pl-10">
