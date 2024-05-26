@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import MobileMenu from "./MobileMenu";
 
 
 function Header() {
   return (
     <header
       className="fixed w-full 
-    px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center mix-blend-difference text-white"
+    px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center lg:mix-blend-difference mix-blend-normal text-white"
     >
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
         <Link to={"/"} className="max-w-[200px] ">
-          <p className="text-[22px] font-bold">L é o</p>
+          <p className="text-[22px] font-bold text-black lg:text-white">L é o</p>
         </Link>
-        <nav className="hidden xl:flex gap-x-12 font-semibold">
+        <nav className="hidden xl:flex lg:flex gap-x-12 font-semibold">
           <Link to="/" className="text-[#696c6d] hover:text-white transition">
             Home
           </Link>
@@ -37,7 +38,7 @@ function Header() {
         </nav>
       </div>
 
-      <div className="hidden xl:flex ml-24">
+      <div className="hidden xl:flex lg:flex ml-24">
         <ul className="flex gap-x-4 ">
           <li className="flex gap-2">
             <a
@@ -104,6 +105,7 @@ function Header() {
           </li>
         </ul>
       </div>
+      <MobileMenu />
     </header>
   );
 }
