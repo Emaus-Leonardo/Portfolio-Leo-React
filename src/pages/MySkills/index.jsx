@@ -5,7 +5,9 @@ import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
-import SkillSection from "../../components/SkillSections";
+import SoftSkills from "../../components/SoftSkills"
+import FrontEnd from "../../components/FrontEnd";
+import BackEnd from "../../components/BackEnd";
 
 function MySkills() {
   const [showWindow, setShowWindow] = useState(false);
@@ -26,32 +28,20 @@ function MySkills() {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
-            <SkillSection src="" title="HTML" />
-            <SkillSection src="" title="CSS" />
-            <SkillSection src="" title="JavaScript" />
-            <SkillSection src="" title="TypeScript" />
-            <SkillSection src="" title="React" />
-            <SkillSection src="" title="TailWind" />
-            <SkillSection src="" title="BootStrap" />
-            <SkillSection src="" title="React Native" />
+          <div className=" ">
+            <FrontEnd />
           </div>
         );
       case "backEnd":
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
-            <SkillSection src="" title="Node.js" />
-            <SkillSection src="" title="SQL" />
-            <SkillSection src="" title="Python" />
+          <div className="">
+            <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
-            <SkillSection src="" title="Communication" />
-            <SkillSection src="" title="Teamwork" />
-            <SkillSection src="" title="Problem-Solving" />
-            <SkillSection src="" title="Time Management" />
+          <div className=" ">
+            <SoftSkills />
           </div>
         );
       default:
@@ -125,7 +115,7 @@ function MySkills() {
             </nav>
             <div className="flex">
               <aside className="flex-1 flex flex-col md:flex-row">
-                <div className="flex flex-col justify-around p-4 md:w-[280px] bg-[#939393] rounded-bl-lg">
+                <div className="flex flex-col justify-around p-4 md:w-[280px] h-full bg-[#939393] rounded-bl-lg">
                   <ul className="flex flex-col justify-center items-center cursor-pointer text-white font-primary font-medium">
                     <li
                       onClick={() => handleSection("frontEnd")}
