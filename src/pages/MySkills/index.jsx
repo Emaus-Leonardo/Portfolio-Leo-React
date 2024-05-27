@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 
 import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
-import DatabaseIcon from "../../../public/img/databaseIcon.svg";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
@@ -40,7 +39,7 @@ function MySkills() {
               }}
               className="w-[210px] h-[55px] bg-black text-white font-bold lg:mt-7 mt-2 hover:shadow-lg"
             >
-              Toggle My Skills
+              Get Started
             </button>
           </motion.div>
         )}
@@ -54,7 +53,7 @@ function MySkills() {
             exit={{ opacity: 0, y: "100%" }}
             transition={Smooth}
             onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] flex flex-col shadow-custom rounded-lg"
+            className="w-full max-w-[1100px] flex flex-col shadow-2xl rounded-lg"
           >
             <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
               <p className="text-white text-[12px] font-bold pl-10">

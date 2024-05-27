@@ -5,9 +5,9 @@ export default {
      fontFamily: {
       primary: ['Inter', 'sans-serif'],
     },
-    boxShadow: {
-      custom: "7px 7px 16.4px 0px rgba(0,0,0,0.25)"
-    },
+    // boxShadow: {
+    //   custom: "7px 7px 16.4px 0px rgba(0,0,0,0.25)"
+    // },
     screens: {
       sm: '640px',
       md: '768px',

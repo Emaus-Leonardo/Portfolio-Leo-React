@@ -15,8 +15,8 @@ const MobileMenu = () => {
         <CgMenuRight />
       </div>
       <div
-        className={`bg-[#232524] shadow-2x1 w-full absolute top-0 right-0 max-w-xs h-screen z-20 transition-transform transform ${
-          openMenu ? "translate-x-0 duration-300" : "translate-x-full duration-300"
+        className={`bg-black shadow-2x1 w-full absolute top-0 right-0 max-w-xs h-screen z-20 transition-transform transform shadow-2xl ${
+          openMenu ? "translate-x-0 duration-500" : "translate-x-full duration-500"
         }`}
       >
         <div
