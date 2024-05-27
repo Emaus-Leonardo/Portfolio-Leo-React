@@ -5,26 +5,9 @@ import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
+import SkillSection from "../../components/SkillSections";
 
 function MySkills() {
-  const sections = {
-    frontEnd: () => (
-      <div>
-        <h2>Front End Section</h2>
-      </div>
-    ),
-    backEnd: () => (
-      <div>
-        <h2>Back End Section</h2>
-      </div>
-    ),
-    softSkills: () => (
-      <div>
-        <h2>Soft Skills Section</h2>
-      </div>
-    ),
-  };
-
   const [showWindow, setShowWindow] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -37,6 +20,43 @@ function MySkills() {
   const handleSection = (section) => {
     setActiveSection(section);
     setShowWindow(true);
+  };
+
+  const renderSkillsContent = () => {
+    switch (activeSection) {
+      case "frontEnd":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
+            <SkillSection src="" title="HTML" />
+            <SkillSection src="" title="CSS" />
+            <SkillSection src="" title="JavaScript" />
+            <SkillSection src="" title="TypeScript" />
+            <SkillSection src="" title="React" />
+            <SkillSection src="" title="TailWind" />
+            <SkillSection src="" title="BootStrap" />
+            <SkillSection src="" title="React Native" />
+          </div>
+        );
+      case "backEnd":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
+            <SkillSection src="" title="Node.js" />
+            <SkillSection src="" title="SQL" />
+            <SkillSection src="" title="Python" />
+          </div>
+        );
+      case "softSkills":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 overflow-y-auto max-h-[60vh] ">
+            <SkillSection src="" title="Communication" />
+            <SkillSection src="" title="Teamwork" />
+            <SkillSection src="" title="Problem-Solving" />
+            <SkillSection src="" title="Time Management" />
+          </div>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
@@ -177,8 +197,8 @@ function MySkills() {
                   </div>
                 </div>
               </aside>
-              <div className="w-full h-full bg-[#D9D9D9] rounded-ee-lg">
-                {sections[activeSection] && sections[activeSection]()}
+              <div className="flex justify-center items-center w-full h-full bg-[#D9D9D9] rounded-ee-lg">
+                {renderSkillsContent()}
               </div>
             </div>
           </motion.div>
