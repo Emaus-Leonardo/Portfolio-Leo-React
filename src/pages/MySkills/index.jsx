@@ -7,12 +7,36 @@ import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
 
 function MySkills() {
+  const sections = {
+    frontEnd: () => (
+      <div>
+        <h2>Front End Section</h2>
+      </div>
+    ),
+    backEnd: () => (
+      <div>
+        <h2>Back End Section</h2>
+      </div>
+    ),
+    softSkills: () => (
+      <div>
+        <h2>Soft Skills Section</h2>
+      </div>
+    ),
+  };
+
   const [showWindow, setShowWindow] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClose = () => {
     setIsAnimating(true);
     setShowWindow(false);
+  };
+
+  const handleSection = (section) => {
+    setActiveSection(section);
+    setShowWindow(true);
   };
 
   return (
@@ -73,7 +97,12 @@ function MySkills() {
               <aside className="flex-1 flex flex-col md:flex-row">
                 <div className="flex flex-col justify-around p-4 md:w-[280px] bg-[#939393] rounded-bl-lg">
                   <ul className="flex flex-col justify-center items-center cursor-pointer text-white font-primary font-medium">
-                    <li className="flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all">
+                    <li
+                      onClick={() => handleSection("frontEnd")}
+                      className={`flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all ${
+                        activeSection === "frontEnd" && "bg-[#838383]"
+                      }`}
+                    >
                       <svg
                         width="21"
                         height="17"
@@ -87,7 +116,13 @@ function MySkills() {
                       </svg>
                       Front End
                     </li>
-                    <li className="flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all">
+
+                    <li
+                      onClick={() => handleSection("backEnd")}
+                      className={`flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all ${
+                        activeSection === "backEnd" && "bg-[#838383]"
+                      }`}
+                    >
                       <svg
                         className="mr-3"
                         xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +136,13 @@ function MySkills() {
                       </svg>
                       Back End
                     </li>
-                    <li className="flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all">
+
+                    <li
+                      onClick={() => handleSection("softSkills")}
+                      className={`flex items-center hover:bg-[#838383] px-10 w-full h-[50px] transition-all ${
+                        activeSection === "softSkills" && "bg-[#838383]"
+                      }`}
+                    >
                       <svg
                         fill="white"
                         height="20px"
@@ -125,7 +166,7 @@ function MySkills() {
                         className="w-full h-auto"
                       />
                     </div>
-                    
+
                     <p className="text-[12px] text-white font-primary font-bold mr-3 mb-10">
                       Lorem Ipsum is simply dummy <br />
                       text of the printing and <br />
@@ -136,7 +177,9 @@ function MySkills() {
                   </div>
                 </div>
               </aside>
-              <div className="w-full h-full bg-[#D9D9D9] rounded-ee-lg"></div>
+              <div className="w-full h-full bg-[#D9D9D9] rounded-ee-lg">
+                {sections[activeSection] && sections[activeSection]()}
+              </div>
             </div>
           </motion.div>
         )}
