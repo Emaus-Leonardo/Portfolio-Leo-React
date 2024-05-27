@@ -109,8 +109,18 @@ function MySkills() {
                     <div className="w-3 h-3 bg-red-600 rounded-full"></div>
                   </button>
                 </Tooltip>
-                <div className="w-3 h-3 bg-yellow-300 rounded-full ml-2"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
+
+                <Tooltip title="Minimize">
+                  <button>
+                    <div className="w-3 h-3 bg-yellow-300 rounded-full ml-2"></div>
+                  </button>
+                </Tooltip>
+
+                <Tooltip title="Maximeze">
+                  <button>
+                    <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
+                  </button>
+                </Tooltip>
               </div>
             </nav>
             <div className="flex">
