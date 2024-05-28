@@ -102,19 +102,20 @@ function MySkills() {
               </p>
               <div className="flex mr-6">
                 <Tooltip title="Close">
-                  <button onClick={handleClose}>
-                    <div className="w-3 h-3 bg-red-600 rounded-full"></div>
+                  <button onClick={handleClose}
+                  className="hover:scale-105 transition-all duration-200">
+                    <div className="w-3 h-3 bg-red-600 rounded-full "></div>
                   </button>
                 </Tooltip>
 
                 <Tooltip title="Minimize">
-                  <button>
+                  <button className="hover:scale-105 transition-all duration-200">
                     <div className="w-3 h-3 bg-yellow-300 rounded-full ml-2"></div>
                   </button>
                 </Tooltip>
 
                 <Tooltip title="Maximeze">
-                  <button>
+                  <button className="hover:scale-105 transition-all duration-200">
                     <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
                   </button>
                 </Tooltip>
