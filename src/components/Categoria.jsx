@@ -37,6 +37,7 @@ function Categoria({ children }) {
       <motion.div
         initial={{ opacity: 1, x: "-100%" }}
         animate={{ x: menuOpen ? 0 : "-100%" }} 
+        exit={{ opacity: 1, x: "-100%" }}
         transition={Smooth}
         className={`fixed left-0 z-20 flex justify-center items-center w-[150px] 
       h-auto bg-white p-4 rounded-e-md shadow-2xl`}

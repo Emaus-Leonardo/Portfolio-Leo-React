@@ -130,7 +130,7 @@ function MySkills() {
                 >
                   <button
                     onClick={toggleMenu}
-                    className={`flex justify-center items-center w-[30px] h-[30px] pr-1 bg-white rounded-full self-end ${menuOpen ? "self-end" : "self-center"}`}
+                    className={`flex justify-center items-center w-[30px] h-[30px] pr-1 bg-white rounded-full self-end `}
                   >
                     {menuOpen ? (
                       <CgChevronLeft size={25} />
@@ -212,7 +212,7 @@ function MySkills() {
                     </div>
 
                     {menuOpen && (
-                      <p className="text-[12px] text-white font-primary font-bold mb-10">
+                      <p className="text-[12px] text-white font-primary font-bold ">
                         Test your limit.
                       </p>
                     )}
