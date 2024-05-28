@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 
 function FrontEnd() {
   return (
-    <div className="h-[70vh] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 justify-center items-center">
+    <div className="h-[70vh] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 justify-center 
+    items-center ">
       <motion.div
         initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: 0 }}

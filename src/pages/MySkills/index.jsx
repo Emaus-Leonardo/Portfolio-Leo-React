@@ -35,24 +35,22 @@ function MySkills() {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="flex justify-center items-center overflow-y-auto w-full my-4 ">
+          <div className="flex justify-center items-center overflow-y-auto w-full ">
             <FrontEnd />
           </div>
         );
       case "backEnd":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[70vh] my-4">
+          <div className="flex justify-center  overflow-y-auto w-full ">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[70vh] my-4">
+          <div className="flex justify-center  overflow-y-auto w-full ">
             <SoftSkills />
           </div>
         );
-      default:
-        return null;
     }
   };
 
@@ -94,7 +92,7 @@ function MySkills() {
             exit={{ opacity: 0, y: "100%" }}
             transition={Smooth}
             onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] flex flex-col shadow-2xl rounded-lg mt-16"
+            className="w-full max-w-[1100px] px-1 flex flex-col  rounded-lg mt-16"
           >
             <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
               <p className="text-white text-[12px] font-bold pl-10">
@@ -102,8 +100,10 @@ function MySkills() {
               </p>
               <div className="flex mr-6">
                 <Tooltip title="Close">
-                  <button onClick={handleClose}
-                  className="hover:scale-105 transition-all duration-200">
+                  <button
+                    onClick={handleClose}
+                    className="hover:scale-105 transition-all duration-200"
+                  >
                     <div className="w-3 h-3 bg-red-600 rounded-full "></div>
                   </button>
                 </Tooltip>
@@ -122,42 +122,42 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className="flex-1 flex flex-col md:flex-row">
+              <aside className=" flex-1 flex flex-col md:flex-row">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
-                  className="flex flex-col justify-around p-4 h-full bg-[#939393] rounded-bl-lg"
+                  className="flex flex-col justify-around p-4 h-[70vh] bg-[#939393] rounded-bl-lg"
                 >
-                  <button
-                    onClick={toggleMenu}
-                    className={`flex justify-center items-center w-[30px] h-[30px] pr-1 bg-white rounded-full self-end `}
-                  >
-                    {menuOpen ? (
-                      <CgChevronLeft size={25} />
-                    ) : (
-                      <CgChevronRight size={25} />
-                    )}
-                  </button>
-
-                  <ul className="flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
+                  <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
+                    <div className=" flex justify-center left-[260px] top-5">
+                      <button
+                        onClick={toggleMenu}
+                        className={`flex justify-center items-center w-[50px] h-[50px] hover:bg-[#838383] pr-1 rounded-full transition-all `}
+                      >
+                        {menuOpen ? (
+                          <CgChevronLeft size={25} />
+                        ) : (
+                          <CgChevronRight size={25} />
+                        )}
+                      </button>
+                    </div>
                     <li
                       onClick={() => handleSection("frontEnd")}
                       className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
                         activeSection === "frontEnd" && "bg-[#838383]"
-                      } ${menuOpen ? "px-4 md:px-10 flex justify-center" : "flex justify-center"}`}
+                      } ${
+                        menuOpen
+                          ? "px-4 md:px-10 flex justify-center"
+                          : "flex justify-center"
+                      }`}
                     >
-                      <svg
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 17"
-                        
-                      >
+                      <svg width="21" height="21" viewBox="0 0 21 17">
                         <path
                           d="M4.59 0L6 1.41L2.82 4.59L6 7.77L4.59 9.19L0 4.59L4.59 0ZM10.41 0L15 4.59L10.41 9.19L9 7.77L12.18 4.59L9 1.41L10.41 0ZM21 2.59V14.59C21 15.7 20.11 16.59 19 16.59H3C2.46957 16.59 1.96086 16.3793 1.58579 16.0042C1.21071 15.6291 1 15.1204 1 14.59V10.59H3V14.59H19V2.59H16.03V0.59H19C20.11 0.59 21 1.48 21 2.59Z"
                           fill="white"
                         />
                       </svg>
-                      
+
                       {menuOpen && <span>Front End</span>}
                     </li>
 
@@ -165,7 +165,11 @@ function MySkills() {
                       onClick={() => handleSection("backEnd")}
                       className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
                         activeSection === "backEnd" && "bg-[#838383]"
-                      } ${menuOpen ? "px-4 md:px-10 flex justify-center" : "flex justify-center"}`}
+                      } ${
+                        menuOpen
+                          ? "px-4 md:px-10 flex justify-center"
+                          : "flex justify-center"
+                      }`}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +188,11 @@ function MySkills() {
                       onClick={() => handleSection("softSkills")}
                       className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
                         activeSection === "softSkills" && "bg-[#838383]"
-                      } ${menuOpen ? "px-4 md:px-10 flex justify-center" : "flex justify-center"}`}
+                      } ${
+                        menuOpen
+                          ? "px-4 md:px-10 flex justify-center"
+                          : "flex justify-center"
+                      }`}
                     >
                       <svg
                         fill="white"
@@ -212,14 +220,14 @@ function MySkills() {
                     </div>
 
                     {menuOpen && (
-                      <p className="text-[12px] text-white font-primary font-bold ">
+                      <p className="text-[12px] text-white font-primary font-bold mb-16">
                         Test your limit.
                       </p>
                     )}
                   </div>
                 </motion.div>
               </aside>
-              <div className="flex justify-center items-center w-full h-full bg-[#D9D9D9] rounded-ee-lg">
+              <div className="flex justify-center items-center w-full h-full bg-[#D9D9D9] rounded-ee-lg ">
                 {renderSkillsContent()}
               </div>
             </div>
