@@ -35,19 +35,19 @@ function MySkills() {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="flex justify-center items-center overflow-y-auto w-full ">
+          <div className="flex justify-center items-center overflow-y-auto w-full h-[70vh]">
             <FrontEnd />
           </div>
         );
       case "backEnd":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full ">
+          <div className="flex justify-center  overflow-y-auto w-full h-[70vh]">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full ">
+          <div className="flex justify-center  overflow-y-auto w-full h-[70vh]">
             <SoftSkills />
           </div>
         );

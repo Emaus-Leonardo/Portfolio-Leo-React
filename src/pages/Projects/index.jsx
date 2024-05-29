@@ -22,7 +22,7 @@ function Projects() {
       <div className="mx-auto h-full relative flex items-center justify-center">
         <div className="flex flex-col justify-center items-center">
 
-          <div className="flex flex-col justify-center items-center ">
+          <div className="flex flex-col justify-center items-center mt-24">
             <Categoria>
               <motion.div
                 initial={{ opacity: 0, y: "30%" }}
