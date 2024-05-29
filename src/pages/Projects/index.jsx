@@ -7,7 +7,7 @@ import ToDoList from "../../../public/img/toDoList.jpg";
 import RefreshShop from "../../../public/img/refreshShop.jpg";
 import Portfolio from "../../../public/img/portfolio.jpg";
 import AppClima from "../../../public/img/appClima.jpg";
-import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg"
+import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg";
 
 import Categoria from "../../components/Categoria";
 
@@ -52,7 +52,7 @@ function Projects() {
                   img={AppClima}
                   github="https://github.com/Emaus-Leonardo/App-Clima"
                   demo="https://emaus-leonardo.github.io/App-Clima/"
-                  summary="Aplicativo desenvolvido com intuito de aprendizagem em JavaScript, HTML e CSS"
+                  summary="Aplicativo de Clima JavaScript, HTML e CSS"
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
@@ -116,7 +116,7 @@ function Projects() {
                   img={LanchonetePequim}
                   github=""
                   demo="https://pequim-lanchonete.vercel.app/"
-                  summary="Landing Page desenvolvida em conjunto com um amigo para a lanchonete pequim de presidente prudente"
+                  summary="Landing Page desenvolvida em conjunto com um amigo para a lanchonete pequim de presidente prudente, foi desenvolvido com TypeScript,Tailwind css e React"
                   category={["Tailwind", "React", "TypeScript"]}
                 />
               </motion.div>
