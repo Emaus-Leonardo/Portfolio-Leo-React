@@ -7,6 +7,7 @@ import ToDoList from "../../../public/img/toDoList.jpg";
 import RefreshShop from "../../../public/img/refreshShop.jpg";
 import Portfolio from "../../../public/img/portfolio.jpg";
 import AppClima from "../../../public/img/appClima.jpg";
+import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg"
 
 import Categoria from "../../components/Categoria";
 
@@ -21,7 +22,6 @@ function Projects() {
     >
       <div className="mx-auto h-full relative flex items-center justify-center">
         <div className="flex flex-col justify-center items-center">
-
           <div className="flex flex-col justify-center items-center mt-24">
             <Categoria>
               <motion.div
@@ -102,6 +102,22 @@ function Projects() {
                   summary="Este é um programa de automação escrito em Python com a biblioteca PyAutoGUI e a estrutura de interface gráfica KivyMD.
                   O objetivo do programa é automatizar o processo de atualização de uma loja virtual em um jogo, utilizando Python"
                   category={["Python"]}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: "160%" }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: "100%" }}
+                transition={Smooth}
+                category={["Tailwind", "React", "TypeScript"]}
+              >
+                <Cards
+                  title="{Lanchonete Pequim}"
+                  img={LanchonetePequim}
+                  github=""
+                  demo="https://pequim-lanchonete.vercel.app/"
+                  summary="Landing Page desenvolvida em conjunto com um amigo para a lanchonete pequim de presidente prudente"
+                  category={["Tailwind", "React", "TypeScript"]}
                 />
               </motion.div>
             </Categoria>
