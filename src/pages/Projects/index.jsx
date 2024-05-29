@@ -18,7 +18,7 @@ function Projects() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={Smooth}
-      className="section overflow-y-scroll overflow-x-hidden bg-[#F0F4F9]"
+      className="section overflow-y-scroll overflow-x-hidden bg-[#F4F6F8]"
     >
       <div className="mx-auto h-full relative flex items-center justify-center">
         <div className="flex flex-col justify-center items-center">
