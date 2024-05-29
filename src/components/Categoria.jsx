@@ -40,7 +40,7 @@ function Categoria({ children }) {
         exit={{ opacity: 1, x: "-100%" }}
         transition={Smooth}
         className={`fixed left-0 z-20 flex justify-center items-center w-[150px] 
-      h-auto bg-white p-4 rounded-e-md shadow-2xl`}
+      h-auto bg-white p-4 rounded-e-md shadow-xl`}
       >
         <div className="flex flex-col items-start">
           <h2 className="mb-4 text-[15px] font-semibold">Technology:</h2>
@@ -65,7 +65,7 @@ function Categoria({ children }) {
         <div className="absolute flex justify-center items-center -right-5 ">
           <button
             onClick={toggleMenu}
-            className="flex justify-center items-center w-[40px] h-[40px] pl-2 bg-white rounded-full"
+            className="flex justify-center items-center w-[40px] h-[40px]  pl-2 bg-white rounded-full"
           >
             {menuOpen ? <CgChevronLeft size={25} /> : <CgChevronRight size={25} />}
           </button>
