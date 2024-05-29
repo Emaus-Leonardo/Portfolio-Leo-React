@@ -133,7 +133,7 @@ function Home() {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/emaus-leonardo/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:-translate-y-2 bg transition-all duration-300 ease-in-out "
