@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 function FrontEnd() {
   return (
-    <div className="h-[70vh] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 justify-center 
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 md:mt-0 mt-40 justify-center 
     items-center ">
       <motion.div
-        initial={{ opacity: 0, y: "20%" }}
+        initial={{ opacity: 0, y: "10%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -16,7 +16,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "40%" }}
+        initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -24,7 +24,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "60%" }}
+        initial={{ opacity: 0, y: "30%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -32,7 +32,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "80%" }}
+        initial={{ opacity: 0, y: "40%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -40,7 +40,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "100%" }}
+        initial={{ opacity: 0, y: "50%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -48,7 +48,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "120%" }}
+        initial={{ opacity: 0, y: "60%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -56,7 +56,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "140%" }}
+        initial={{ opacity: 0, y: "70%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >
@@ -64,7 +64,7 @@ function FrontEnd() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: "160%" }}
+        initial={{ opacity: 0, y: "80%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={Smooth}
       >

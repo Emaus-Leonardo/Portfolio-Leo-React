@@ -35,19 +35,19 @@ function MySkills() {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="flex justify-center items-center overflow-y-auto w-full h-[70vh]">
+          <div className="flex justify-center items-center overflow-y-auto w-full h-[65vh]">
             <FrontEnd />
           </div>
         );
       case "backEnd":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[70vh]">
+          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[70vh]">
+          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
             <SoftSkills />
           </div>
         );
@@ -92,7 +92,7 @@ function MySkills() {
             exit={{ opacity: 0, y: "100%" }}
             transition={Smooth}
             onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] px-1 flex flex-col  rounded-lg mt-16"
+            className="w-full max-w-[1100px] px-1 flex flex-col rounded-lg mt-16"
           >
             <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
               <p className="text-white text-[12px] font-bold pl-10">
@@ -126,10 +126,10 @@ function MySkills() {
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
-                  className="flex flex-col justify-around p-4 h-[70vh] bg-[#939393] rounded-bl-lg"
+                  className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
                 >
                   <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
-                    <div className=" flex justify-center left-[260px] top-5">
+                    <div className=" flex justify-center left-[260px] top-5 mb-1">
                       <button
                         onClick={toggleMenu}
                         className={`flex justify-center items-center w-[50px] h-[50px] hover:bg-[#838383] pr-1 rounded-full transition-all `}
@@ -220,7 +220,7 @@ function MySkills() {
                     </div>
 
                     {menuOpen && (
-                      <p className="text-[12px] text-white font-primary font-bold mb-16">
+                      <p className="text-[12px] text-white font-primary font-bold mb-12">
                         Test your limit.
                       </p>
                     )}
