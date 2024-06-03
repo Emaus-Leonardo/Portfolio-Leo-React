@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tooltip } from "@mui/material";
-import { CgChevronLeft } from "react-icons/cg";
-import { CgChevronRight } from "react-icons/cg";
-
+import { CgChevronLeft, CgChevronRight } from "react-icons/cg";
 import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
-
 import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
 import SoftSkills from "../../components/SoftSkills";
@@ -15,7 +12,16 @@ function MySkills() {
   const [showWindow, setShowWindow] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMenuOpen(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -41,13 +47,13 @@ function MySkills() {
         );
       case "backEnd":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center overflow-y-auto w-full h-[65vh]">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center overflow-y-auto w-full h-[65vh]">
             <SoftSkills />
           </div>
         );
@@ -92,7 +98,7 @@ function MySkills() {
             exit={{ opacity: 0, y: "100%" }}
             transition={Smooth}
             onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] px-1 flex flex-col rounded-lg mt-16"
+            className="w-full max-w-[1100px] px-3 flex flex-col rounded-lg mt-16"
           >
             <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
               <p className="text-white text-[12px] font-bold pl-10">
@@ -114,7 +120,7 @@ function MySkills() {
                   </button>
                 </Tooltip>
 
-                <Tooltip title="Maximeze">
+                <Tooltip title="Maximize">
                   <button className="hover:scale-105 transition-all duration-200">
                     <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
                   </button>
@@ -122,14 +128,14 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className=" flex-1 flex flex-col md:flex-row">
+              <aside className="flex-1 flex flex-col md:flex-row">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
                   className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
                 >
                   <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
-                    <div className=" flex justify-center left-[260px] top-5 mb-1">
+                    <div className="flex justify-center left-[260px] top-5 mb-1">
                       <button
                         onClick={toggleMenu}
                         className={`flex justify-center items-center w-[50px] h-[50px] hover:bg-[#838383] pr-1 rounded-full transition-all `}
