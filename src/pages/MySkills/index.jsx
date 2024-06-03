@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Tooltip } from "@mui/material";
-import { CgChevronLeft, CgChevronRight } from "react-icons/cg";
+import { CgChevronLeft } from "react-icons/cg";
+import { CgChevronRight } from "react-icons/cg";
+
 import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
+
 import { motion, AnimatePresence } from "framer-motion";
 import Smooth from "../../SmoothTransition";
 import SoftSkills from "../../components/SoftSkills";
@@ -47,13 +50,13 @@ function MySkills() {
         );
       case "backEnd":
         return (
-          <div className="flex justify-center overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
             <SoftSkills />
           </div>
         );
@@ -120,7 +123,7 @@ function MySkills() {
                   </button>
                 </Tooltip>
 
-                <Tooltip title="Maximize">
+                <Tooltip title="Maximeze">
                   <button className="hover:scale-105 transition-all duration-200">
                     <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
                   </button>
@@ -128,14 +131,14 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className="flex-1 flex flex-col md:flex-row">
+              <aside className=" flex-1 flex flex-col md:flex-row">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
                   className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
                 >
                   <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
-                    <div className="flex justify-center left-[260px] top-5 mb-1">
+                    <div className=" flex justify-center left-[260px] top-5 mb-1">
                       <button
                         onClick={toggleMenu}
                         className={`flex justify-center items-center w-[50px] h-[50px] hover:bg-[#838383] pr-1 rounded-full transition-all `}
