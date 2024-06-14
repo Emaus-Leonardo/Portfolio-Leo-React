@@ -1,11 +1,11 @@
 import React from "react";
 
-const Cards = ({ title, img, github, demo, category, summary }) => {
+const Cards = ({ title, img, github, demo, category, summary}) => {
   return (
     <div
       className={`relative flex flex-col justify-between items-center w-[300px] h-[320px] bg-white text-black rounded-xl p-1 shadow-lg ${category} group`}
     >
-      <div className="w-[290px] h-[200px] flex justify-center items-center rounded-t-lg overflow-hidden relative">
+      <div className="w-[290px] h-[200px] flex justify-center items-center rounded-t-lg overflow-hidden relative ">
         <img src={img} className="object-cover w-full h-full" alt={title} />
 
         <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -41,3 +41,4 @@ const Cards = ({ title, img, github, demo, category, summary }) => {
 };
 
 export default Cards;
+
