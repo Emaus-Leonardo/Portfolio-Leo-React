@@ -24,7 +24,7 @@ function Projects() {
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center mt-24">
             <Categoria>
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: "30%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
@@ -39,7 +39,7 @@ function Projects() {
                   summary="Portfolio desenvolvido em HTML, CSS e JavaScript"
                   category={["HTML", "CSS"]}
                 />
-              </motion.div>
+              </motion.div> */}
               <motion.div
                 initial={{ opacity: 0, y: "60%" }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ function Projects() {
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: "110%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
@@ -87,7 +87,7 @@ function Projects() {
                   summary="Album de Casamento Online para armazenar fotos, foi desenvolvido em React e TailWind."
                   category={["Tailwind", "React"]}
                 />
-              </motion.div>
+              </motion.div> */}
               <motion.div
                 initial={{ opacity: 0, y: "130%" }}
                 animate={{ opacity: 1, y: 0 }}
