@@ -4,6 +4,11 @@ import SkillSection from "../components/SkillSections";
 
 import React from "react";
 
+import discussion from "../../public/img/discussion.png"
+import teamwork from "../../public/img/teamwork.png"
+import problemSolving from "../../public/img/problem-solving.png"
+import timeManagement from "../../public/img/time-management.png"
+
 function SoftSkills() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 justify-center items-center">
@@ -12,7 +17,7 @@ function SoftSkills() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.1 }}
       >
-        <SkillSection src="" title="Communication" />
+        <SkillSection src={discussion} title="Communication" />
       </motion.div>
 
       <motion.div
@@ -20,7 +25,7 @@ function SoftSkills() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.2 }}
       >
-        <SkillSection src="" title="Teamwork" />
+        <SkillSection src={teamwork} title="Teamwork" />
       </motion.div>
 
       <motion.div
@@ -28,7 +33,7 @@ function SoftSkills() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.3 }}
       >
-        <SkillSection src="" title="Problem-Solving" />
+        <SkillSection src={problemSolving} title="Problem Solving" />
       </motion.div>
 
       <motion.div
@@ -36,7 +41,7 @@ function SoftSkills() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.4 }}
       >
-        <SkillSection src="" title="Time Management" />
+        <SkillSection src={timeManagement} title="Time Management" />
       </motion.div>
     </div>
   );

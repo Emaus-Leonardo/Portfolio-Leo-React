@@ -2,10 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Smooth from "../../SmoothTransition";
 import Cards from "../../components/Cards";
-import Album from "../../../public/img/weedingAlbum.jpg";
 import ToDoList from "../../../public/img/toDoList.jpg";
 import RefreshShop from "../../../public/img/refreshShop.jpg";
-import Portfolio from "../../../public/img/portfolio.jpg";
 import AppClima from "../../../public/img/appClima.jpg";
 import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg";
 
@@ -21,25 +19,9 @@ function Projects() {
       className="section overflow-y-scroll overflow-x-hidden bg-[#F4F6F8]"
     >
       <div className="mx-auto h-full relative flex items-center justify-center">
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex flex-col justify-center items-center mt-24">
+        <div className="flex flex-col justify-center items-center ">
+          <div className="flex flex-col justify-center items-center mt-24 ">
             <Categoria>
-              {/* <motion.div
-                initial={{ opacity: 0, y: "30%" }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: "100%" }}
-                transition={Smooth}
-                category={["HTML", "CSS", "JavaScript"]}
-              >
-                <Cards
-                  title="{Portfolio V-1}"
-                  img={Portfolio}
-                  github="https://github.com/Emaus-Leonardo/portfolio-leo"
-                  demo="https://portfolio-leo-ecru.vercel.app/"
-                  summary="Portfolio desenvolvido em HTML, CSS e JavaScript"
-                  category={["HTML", "CSS"]}
-                />
-              </motion.div> */}
               <motion.div
                 initial={{ opacity: 0, y: "60%" }}
                 animate={{ opacity: 1, y: 0 }}
@@ -72,22 +54,6 @@ function Projects() {
                   category={["HTML", "JavaScript", "CSS"]}
                 />
               </motion.div>
-              {/* <motion.div
-                initial={{ opacity: 0, y: "110%" }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: "100%" }}
-                transition={Smooth}
-                category={["Tailwind", "React"]}
-              >
-                <Cards
-                  title="{Weeding Album}"
-                  img={Album}
-                  github="https://github.com/Emaus-Leonardo/Weeding-album"
-                  demo="https://weeding-album.vercel.app/"
-                  summary="Album de Casamento Online para armazenar fotos, foi desenvolvido em React e TailWind."
-                  category={["Tailwind", "React"]}
-                />
-              </motion.div> */}
               <motion.div
                 initial={{ opacity: 0, y: "130%" }}
                 animate={{ opacity: 1, y: 0 }}

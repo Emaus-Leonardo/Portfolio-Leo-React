@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import Smooth from "../SmoothTransition";
 import SkillSection from "./SkillSections";
 
-import NodeIcon from "../../public/img/nodejs-icon.svg"
+import NodeIcon from "../../public/img/Nodeicon.svg"
+import pyIcon from "../../public/img/pyIcon.svg"
+import sqlIcon from "../../public/img/sql-Icon.png"
 
 function BackEnd() {
   return (
@@ -21,7 +23,7 @@ function BackEnd() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.2 }}
       >
-        <SkillSection src="" title="SQL" />
+        <SkillSection src={sqlIcon} title="SQL" />
       </motion.div>
 
       <motion.div
@@ -29,7 +31,7 @@ function BackEnd() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...Smooth, delay: 0.3 }}
       >
-        <SkillSection src="" title="Python" />
+        <SkillSection src={pyIcon} title="Python" />
       </motion.div>
     </div>
   );
