@@ -44,19 +44,19 @@ function MySkills() {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="flex justify-center items-center overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center items-center overflow-y-auto w-full h-[63vh]">
             <FrontEnd />
           </div>
         );
       case "backEnd":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center overflow-y-auto w-full ">
             <BackEnd />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center  overflow-y-auto w-full h-[65vh]">
+          <div className="flex justify-center overflow-y-auto w-full">
             <SoftSkills />
           </div>
         );
@@ -131,7 +131,7 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className=" flex-1 flex flex-col md:flex-row">
+              <aside className=" flex-1 flex flex-col md:flex-row ">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
@@ -236,7 +236,7 @@ function MySkills() {
                   </div>
                 </motion.div>
               </aside>
-              <div className="flex justify-center items-center w-full h-full bg-[#D9D9D9] rounded-ee-lg ">
+              <div className="flex justify-center items-center w-full h-[65vh] bg-[#D9D9D9] rounded-ee-lg ">
                 {renderSkillsContent()}
               </div>
             </div>

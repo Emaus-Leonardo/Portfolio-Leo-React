@@ -9,7 +9,7 @@ import sqlIcon from "../../public/img/sql-Icon.png"
 
 function BackEnd() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 justify-center items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center overflow-hidden py-32 h-full">
       <motion.div
         initial={{ opacity: 0, y: "10%" }}
         animate={{ opacity: 1, y: 0 }}

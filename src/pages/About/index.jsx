@@ -31,7 +31,7 @@ function About() {
                 transition={Smooth}
                 src={ProfileAbout}
                 alt="Profile"
-                className="w-full h-auto lg:max-w-[500px] mx-auto "
+                className="w-full h-auto lg:max-w-[500px]"
               />
             </motion.div>
           </div>
@@ -54,7 +54,6 @@ function About() {
               excepcional. <br /> Estou disposto a trabalhar em projetos desafiadores e
               ajudar equipes criativas e <br /> dinâmicas.
             </p>
-
 
             <motion.div
               initial={{ opacity: 0, y: "100%" }}
