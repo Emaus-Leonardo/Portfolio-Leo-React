@@ -131,11 +131,11 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className=" flex-1 flex flex-col md:flex-row ">
+              <aside className=" flex-1 flex flex-col md:flex-row max-h-[65vh]">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
-                  className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
+                  className="flex flex-col justify-around p-4 max-h-[65vh] bg-[#939393] rounded-bl-lg"
                 >
                   <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
                     <div className=" flex justify-center left-[260px] top-5 mb-1">
@@ -215,10 +215,10 @@ function MySkills() {
                     </li>
                   </ul>
 
-                  <span className="w-full h-[1px] bg-white my-6"></span>
+                  <span className="w-full h-[1px] bg-white my-3"></span>
 
-                  <div className="flex flex-col justify-center items-center gap-5">
-                    <div className="relative overflow-hidden flex-1 rounded-full">
+                  <div className="flex flex-col justify-center items-center gap-2 ">
+                    <div className="relative overflow-hidden w-auto flex-1 rounded-full ">
                       <motion.img
                         whileHover={{ scale: 1.1 }}
                         transition={Smooth}
@@ -229,7 +229,7 @@ function MySkills() {
                     </div>
 
                     {menuOpen && (
-                      <p className="text-[12px] text-white font-primary font-bold mb-12">
+                      <p className="text-[12px] text-white font-primary font-bold ">
                         Test your limit.
                       </p>
                     )}
