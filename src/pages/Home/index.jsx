@@ -65,7 +65,7 @@ function Home() {
       <div className="container mx-auto h-full relative mix-blend-difference">
         <div className="flex justify-center lg:justify-center items-center h-screen relative z-10">
           <motion.div
-            className="flex flex-col justify-center lg:ml-32 ml-44 text-center lg:text-left"
+            className="flex flex-col justify-center lg:ml-32 ml-[142px] text-center lg:text-left"
             initial={{ opacity: 0, y: "-50%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}

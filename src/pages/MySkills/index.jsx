@@ -131,11 +131,11 @@ function MySkills() {
               </div>
             </nav>
             <div className="flex">
-              <aside className=" flex-1 flex flex-col md:flex-row max-h-[65vh]">
+              <aside className=" flex-1 flex flex-col md:flex-row ">
                 <motion.div
                   animate={{ width: menuOpen ? "280px" : "80px" }}
                   transition={Smooth}
-                  className="flex flex-col justify-around p-4 max-h-[65vh] bg-[#939393] rounded-bl-lg"
+                  className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
                 >
                   <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
                     <div className=" flex justify-center left-[260px] top-5 mb-1">
