@@ -16,7 +16,7 @@ function About() {
       <div className="container mx-auto h-full relative flex items-center justify-center">
         <div
           className="flex flex-col lg:flex-row h-auto items-center justify-center gap-x-24 
-        text-center lg:text-left lg:pt-16 pt-[100%] md:pt-96 order-2 lg:order-none"
+        text-center lg:text-left lg:pt-16 pt-[100%] md:pt-96 md:pb-10 order-2 lg:order-none"
         >
           <div className=" order-1 lg:order-none">
             <motion.div
