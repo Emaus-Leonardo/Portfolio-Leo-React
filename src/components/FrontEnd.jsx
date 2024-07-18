@@ -13,7 +13,7 @@ import Typescript from "../../public/img/typescriptIcon.png";
 
 function FrontEnd() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 md:mt-0 mt-40 justify-center items-center">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 px-4 md:mt-0 mt-52 justify-center items-center">
       <motion.div
         initial={{ opacity: 0, y: "10%" }}
         animate={{ opacity: 1, y: 0 }}
