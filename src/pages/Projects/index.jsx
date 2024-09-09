@@ -6,6 +6,7 @@ import ToDoList from "../../../public/img/toDoList.jpg";
 import RefreshShop from "../../../public/img/refreshShop.jpg";
 import AppClima from "../../../public/img/appClima.jpg";
 import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg";
+import ThiagoLunaPortfolio from "../../../public/img/thiagoLunaPortfolio.jpeg";
 
 import Categoria from "../../components/Categoria";
 
@@ -84,6 +85,23 @@ function Projects() {
                   demo="https://pequim-lanchonete.vercel.app/"
                   summary="Landing Page desenvolvida em conjunto com um amigo para a lanchonete pequim de presidente prudente, foi desenvolvido com TypeScript,Tailwind css e React"
                   category={["Tailwind", "React", "TypeScript"]}
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: "160%" }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: "100%" }}
+                transition={Smooth}
+                category={["Tailwind", "React"]}
+              >
+                <Cards
+                  title="{Thiago Luna Portfolio}"
+                  img={ThiagoLunaPortfolio}
+                  github=""
+                  demo="https://thiagolunaf.com/"
+                  summary="Portfolio Desenvolvido para Thiago Luna no estilo de Landing Page Tailwind css e React"
+                  category={["Tailwind", "React"]}
                 />
               </motion.div>
             </Categoria>
