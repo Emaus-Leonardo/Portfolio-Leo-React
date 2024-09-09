@@ -56,7 +56,7 @@ function MySkills() {
         );
       case "softSkills":
         return (
-          <div className="flex justify-center overflow-y-auto w-full">
+          <div className="flex justify-center overflow-y-auto w-full ">
             <SoftSkills />
           </div>
         );
