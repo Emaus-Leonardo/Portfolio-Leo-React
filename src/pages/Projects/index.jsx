@@ -87,7 +87,6 @@ function Projects() {
                   category={["Tailwind", "React", "TypeScript"]}
                 />
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: "160%" }}
                 animate={{ opacity: 1, y: 0 }}
