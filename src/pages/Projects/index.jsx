@@ -6,7 +6,7 @@ import ToDoList from "../../../public/img/toDoList.jpg";
 import RefreshShop from "../../../public/img/refreshShop.jpg";
 import AppClima from "../../../public/img/appClima.jpg";
 import LanchonetePequim from "../../../public/img/lanchonete-pequim.jpg";
-import ThiagoLunaPortfolio from "../../../public/img/thiagoLunaPortfolio.jpeg";
+import ThiagoLunaPortfolio from "../../../public/img/thiagoLunaPortfolio.jpg";
 
 import Categoria from "../../components/Categoria";
 
