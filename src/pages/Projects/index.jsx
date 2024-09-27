@@ -88,7 +88,7 @@ function Projects() {
                 />
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: "160%" }}
+                initial={{ opacity: 0, y: "190%" }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: "100%" }}
                 transition={Smooth}
