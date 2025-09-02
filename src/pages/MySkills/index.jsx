@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Tooltip } from "@mui/material";
-import { CgChevronLeft } from "react-icons/cg";
-import { CgChevronRight } from "react-icons/cg";
-
-import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
-
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, Code, Server, Users } from "lucide-react";
+
 import Smooth from "../../SmoothTransition";
+
 import SoftSkills from "../../components/SoftSkills";
 import FrontEnd from "../../components/FrontEnd";
 import BackEnd from "../../components/BackEnd";
+import ProfileMySkills from "../../../public/img/ProfileMySkills.png";
+import WindowControls from "../../components/ui/window-controls";
+import { Button } from "../../components/ui/button";
+import { useResponsive } from "@/hooks/useReponsive";
+import SkillsMobile from "@/components/SkillsMobile";
 
-function MySkills() {
+const MySkills = () => {
+  const { isMobile } = useResponsive();
   const [showWindow, setShowWindow] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(window.innerWidth > 768);
+  const [menuOpen, setMenuOpen] = useState(true);
 
+  // Handle responsive menu
   useEffect(() => {
     const handleResize = () => {
       setMenuOpen(window.innerWidth > 768);
     };
 
     window.addEventListener("resize", handleResize);
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -33,6 +38,7 @@ function MySkills() {
   const handleClose = () => {
     setIsAnimating(true);
     setShowWindow(false);
+    setActiveSection(null);
   };
 
   const handleSection = (section) => {
@@ -40,28 +46,83 @@ function MySkills() {
     setShowWindow(true);
   };
 
+  const menuItems = [
+    {
+      id: "frontEnd",
+      label: "Frontend",
+      icon: Code,
+      description: "UI/UX Development",
+    },
+    {
+      id: "backEnd",
+      label: "Backend",
+      icon: Server,
+      description: "Server & Database",
+    },
+    {
+      id: "softSkills",
+      label: "Soft Skills",
+      icon: Users,
+      description: "Leadership & Communication",
+    },
+  ];
+
+  const contentClass = "flex justify-center items-start w-full max-h-[65vh] overflow-y-auto";
+
   const renderSkillsContent = () => {
     switch (activeSection) {
       case "frontEnd":
         return (
-          <div className="flex justify-center items-center overflow-y-auto w-full h-[63vh]">
-            <FrontEnd />
+          <div className={contentClass}>
+            <FrontEnd noScroll />
           </div>
         );
       case "backEnd":
         return (
-          <div className="flex justify-center overflow-y-auto w-full ">
-            <BackEnd />
+          <div className={contentClass}>
+            <BackEnd noScroll />
           </div>
         );
       case "softSkills":
         return (
-          <div className="flex justify-center overflow-y-auto w-full ">
-            <SoftSkills />
+          <div className={contentClass}>
+            <SoftSkills noScroll />
+          </div>
+        );
+      default:
+        return (
+          <div className="flex items-center justify-center h-full p-4">
+            <div className="text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={Smooth}
+                className="w-24 h-24 bg-white rounded-full mx-auto mb-6 flex items-center justify-center"
+              >
+                <Code className="w-12 h-12 text-black" />
+              </motion.div>
+              <h3 className="text-2xl font-bold text-window-content-foreground mb-3">
+                Select a Skill Category
+              </h3>
+              <p className="text-window-content-foreground/70">
+                Choose from the sidebar to explore my technical and soft skills
+              </p>
+            </div>
           </div>
         );
     }
   };
+
+   if (isMobile) {
+    return (
+      <SkillsMobile 
+        SoftSkills={SoftSkills}
+        FrontEnd={FrontEnd}
+        BackEnd={BackEnd}
+        ProfileMySkills={ProfileMySkills}
+      />
+    );
+  }
 
   return (
     <motion.section
@@ -69,7 +130,7 @@ function MySkills() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: "100%" }}
       transition={Smooth}
-      className="section flex flex-col justify-center items-center"
+      className="mx-auto h-screen flex flex-col justify-center items-center bg-background p-4"
     >
       <AnimatePresence>
         {!showWindow && !isAnimating && (
@@ -98,153 +159,136 @@ function MySkills() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            exit={{ opacity: 0, y: "100%" }}
-            transition={Smooth}
-            onAnimationComplete={() => setIsAnimating(false)}
-            className="w-full max-w-[1100px] px-3 flex flex-col rounded-lg mt-16"
+            exit={{ opacity: 0, y: 100 }}
+            transition={Smooth} onAnimationComplete={() => setIsAnimating(false)}
+            className="w-full max-w-7xl mx-auto flex flex-col rounded-xl overflow-hidden"
           >
-            <nav className="flex justify-between items-center h-12 bg-[#707070] rounded-t-lg ">
-              <p className="text-white text-[12px] font-bold pl-10">
-                My Skills_
-              </p>
-              <div className="flex mr-6">
-                <Tooltip title="Close">
-                  <button
-                    onClick={handleClose}
-                    className="hover:scale-105 transition-all duration-200"
-                  >
-                    <div className="w-3 h-3 bg-red-600 rounded-full "></div>
-                  </button>
-                </Tooltip>
-
-                <Tooltip title="Minimize">
-                  <button className="hover:scale-105 transition-all duration-200">
-                    <div className="w-3 h-3 bg-yellow-300 rounded-full ml-2"></div>
-                  </button>
-                </Tooltip>
-
-                <Tooltip title="Maximeze">
-                  <button className="hover:scale-105 transition-all duration-200">
-                    <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
-                  </button>
-                </Tooltip>
+            {/* Window Header */}
+            <nav className="flex justify-between items-center h-12 bg-[#3F3F46] px-6">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                <p className="text-white text-sm font-medium">
+                  My Skills Portfolio
+                </p>
               </div>
+              <WindowControls onClose={handleClose} />
             </nav>
-            <div className="flex">
-              <aside className=" flex-1 flex flex-col md:flex-row ">
-                <motion.div
-                  animate={{ width: menuOpen ? "280px" : "80px" }}
-                  transition={Smooth}
-                  className="flex flex-col justify-around p-4 h-[65vh] bg-[#939393] rounded-bl-lg"
-                >
-                  <ul className="relative flex flex-col justify-center items-center cursor-pointer text-[16px] text-white font-primary font-medium ">
-                    <div className=" flex justify-center left-[260px] top-5 mb-1">
-                      <button
-                        onClick={toggleMenu}
-                        className={`flex justify-center items-center w-[50px] h-[50px] hover:bg-[#838383] pr-1 rounded-full transition-all `}
-                      >
-                        {menuOpen ? (
-                          <CgChevronLeft size={25} />
-                        ) : (
-                          <CgChevronRight size={25} />
-                        )}
-                      </button>
-                    </div>
-                    <li
-                      onClick={() => handleSection("frontEnd")}
-                      className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
-                        activeSection === "frontEnd" && "bg-[#838383]"
-                      } ${
-                        menuOpen
-                          ? "px-4 md:px-10 flex justify-center"
-                          : "flex justify-center"
-                      }`}
-                    >
-                      <svg width="21" height="21" viewBox="0 0 21 17">
-                        <path
-                          d="M4.59 0L6 1.41L2.82 4.59L6 7.77L4.59 9.19L0 4.59L4.59 0ZM10.41 0L15 4.59L10.41 9.19L9 7.77L12.18 4.59L9 1.41L10.41 0ZM21 2.59V14.59C21 15.7 20.11 16.59 19 16.59H3C2.46957 16.59 1.96086 16.3793 1.58579 16.0042C1.21071 15.6291 1 15.1204 1 14.59V10.59H3V14.59H19V2.59H16.03V0.59H19C20.11 0.59 21 1.48 21 2.59Z"
-                          fill="white"
-                        />
-                      </svg>
 
-                      {menuOpen && <span>Front End</span>}
-                    </li>
-
-                    <li
-                      onClick={() => handleSection("backEnd")}
-                      className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
-                        activeSection === "backEnd" && "bg-[#838383]"
-                      } ${
-                        menuOpen
-                          ? "px-4 md:px-10 flex justify-center"
-                          : "flex justify-center"
-                      }`}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20px"
-                        viewBox="0 0 16 16"
-                      >
-                        <g fill="white">
-                          <path d="M7 13H2V7h13V3a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h5v-1zM2 3h12v3H2V3z" />
-                          <path d="M3.75 5h-.5A.25.25 0 0 1 3 4.75v-.5A.25.25 0 0 1 3.25 4h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25zM5.75 5h-.5A.25.25 0 0 1 5 4.75v-.5A.25.25 0 0 1 5.25 4h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25zM7.75 5h-.5A.25.25 0 0 1 7 4.75v-.5A.25.25 0 0 1 7.25 4h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25zM15.897 11.399l-1.213-.346a2.685 2.685 0 0 0-.115-.282l.611-1.101a.142.142 0 0 0-.024-.17l-.656-.656a.143.143 0 0 0-.17-.024l-1.1.611a2.775 2.775 0 0 0-.282-.115l-.346-1.213A.146.146 0 0 0 12.463 8h-.927a.142.142 0 0 0-.137.103l-.347 1.213a2.685 2.685 0 0 0-.282.115l-1.1-.611a.143.143 0 0 0-.17.024l-.656.655a.144.144 0 0 0-.024.171l.611 1.101a2.775 2.775 0 0 0-.115.282l-1.213.346a.144.144 0 0 0-.103.138v.927c0 .064.042.12.103.137l1.213.346c.034.097.071.191.115.282l-.612 1.101a.142.142 0 0 0 .024.17l.656.656a.143.143 0 0 0 .17.024l1.101-.611c.091.044.186.081.282.115l.346 1.213a.146.146 0 0 0 .139.103h.927c.064 0 .12-.042.137-.103l.346-1.213c.097-.034.191-.071.282-.115l1.101.611a.142.142 0 0 0 .17-.024l.656-.656a.143.143 0 0 0 .024-.17l-.611-1.101c.044-.091.081-.186.115-.282l1.213-.346a.144.144 0 0 0 .103-.138v-.927a.143.143 0 0 0-.103-.137zM12 13.5a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 12 13.5z" />
-                        </g>
-                      </svg>
-                      {menuOpen && <span>Back End</span>}
-                    </li>
-
-                    <li
-                      onClick={() => handleSection("softSkills")}
-                      className={`flex items-center hover:bg-[#838383] gap-3 w-full h-[50px] transition-all ${
-                        activeSection === "softSkills" && "bg-[#838383]"
-                      } ${
-                        menuOpen
-                          ? "px-4 md:px-10 flex justify-center"
-                          : "flex justify-center"
-                      }`}
-                    >
-                      <svg
-                        fill="white"
-                        height="20px"
-                        width="20px"
-                        viewBox="0 0 210 210"
-                      >
-                        <path d="M0,0v210h210V0H0z M184,186h-81v-22h81V186z M184,139H47v-21h137V139z M184,93H65V72h119V93z M184,46H27V25h157V46z"></path>{" "}
-                      </svg>
-                      {menuOpen && <span>Soft Skills</span>}
-                    </li>
-                  </ul>
-
-                  <span className="w-full h-[1px] bg-white my-3"></span>
-
-                  <div className="flex flex-col justify-center items-center gap-2 ">
-                    <div className="relative overflow-hidden w-auto flex-1 rounded-full ">
-                      <motion.img
-                        whileHover={{ scale: 1.1 }}
-                        transition={Smooth}
-                        src={ProfileMySkills}
-                        alt="Profile My Skills"
-                        className="w-full h-auto"
-                      />
-                    </div>
-
-                    {menuOpen && (
-                      <p className="text-[12px] text-white font-primary font-bold ">
-                        Test your limit.
-                      </p>
+            <div className="flex flex-row min-h-[70vh]">
+              {/* Sidebar */}
+              <motion.aside
+                animate={{ width: menuOpen ? 280 : 80 }}
+                transition={Smooth}
+                className="bg-[#27272A] border-r border-border/50 flex flex-col"
+              >
+                {/* Toggle Button */}
+                <div className="p-4 border-b border-border/30">
+                  <Button
+                    onClick={toggleMenu}
+                    variant="ghost"
+                    size="sm"
+                    className="w-full flex items-center justify-center hover:bg-background/10"
+                  >
+                    {menuOpen ? (
+                      <ChevronLeft className="w-5 h-5 text-white" />
+                    ) : (
+                      <ChevronRight className="w-5 h-5 text-white" />
                     )}
+                  </Button>
+                </div>
+
+                {/* Menu Items */}
+                <div className="flex-1 p-4 space-y-2">
+                  {menuItems.map((item) => {
+                    const IconComponent = item.icon;
+                    const isActive = activeSection === item.id;
+
+                    return (
+                      <motion.button
+                        key={item.id}
+                        onClick={() => handleSection(item.id)}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all duration-200 ${isActive
+                          ? "bg-black text-white shadow-md"
+                          : "hover:bg-background/10 text-foreground"
+                          }`}
+                      >
+                        <IconComponent className="w-5 h-5 text-white flex-shrink-0" />
+
+                        <AnimatePresence>
+                          {menuOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -10 }}
+                              transition={{ duration: 0.2 }}
+                              className="flex text-white flex-col items-start text-left"
+                            >
+                              <span className="font-medium">{item.label}</span>
+                              <span className="text-xs opacity-70">
+                                {item.description}
+                              </span>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.button>
+                    );
+                  })}
+                </div>
+
+                {/* Profile Section */}
+                <div className="p-4 border-t border-border/30">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={ProfileMySkills}
+                      alt="Developer Profile"
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+
+                    <AnimatePresence>
+                      {menuOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -10 }}
+                          transition={Smooth} className="flex flex-col"
+                        >
+                          <span className="text-sm font-medium text-white">
+                            Developer
+                          </span>
+                          <span className="text-xs text-gray-300">
+                            Push your limits
+                          </span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                </motion.div>
-              </aside>
-              <div className="flex justify-center items-center w-full h-[65vh] bg-[#D9D9D9] rounded-ee-lg ">
-                {renderSkillsContent()}
-              </div>
+                </div>
+              </motion.aside>
+
+              {/* Content Area */}
+              <main className="flex-1 bg-[#F4F4F5]">
+                <div className="h-full overflow-y-auto">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeSection}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={Smooth} className="min-h-full flex items-center justify-center p-6"
+                    >
+                      {renderSkillsContent()}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </main>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.section>
   );
-}
+};
 
 export default MySkills;

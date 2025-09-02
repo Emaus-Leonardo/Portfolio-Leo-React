@@ -72,7 +72,7 @@ function Categoria({ children }) {
         </div>
       </motion.div>
 
-      <div className="flex h-screen p-8 pt-16">
+      <div className="flex h-screen md:h-full p-8 pt-16">
         <div className="flex flex-wrap justify-center items-center gap-4">
           {filteredChildren}
         </div>
