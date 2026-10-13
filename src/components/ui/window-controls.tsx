@@ -1,8 +1,14 @@
 import { Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
-import { Minus, Square, X } from "lucide-react";
+import { X } from "lucide-react";
 
-const WindowControls = ({ onClose, onMinimize, onMaximize }) => {
+interface WindowControlsProps {
+  onClose?: () => void;
+  onMinimize?: () => void;
+  onMaximize?: () => void;
+}
+
+const WindowControls = ({ onClose }: WindowControlsProps) => {
   return (
     <div className="flex items-center gap-2">
       {/* <Tooltip title="Minimize" arrow placement="top">
