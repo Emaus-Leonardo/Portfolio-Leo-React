@@ -48,6 +48,11 @@ const en = {
   "projects.demo": "Live demo",
   "projects.hint": "keep scrolling to move on",
   "projects.open": "Open case study:",
+  "projects.all": "View all projects",
+  "projects.view": "View project",
+  "work.title": "All projects",
+  "work.featured": "Featured",
+  "work.count": "projects",
 
   "contact.label": "Contact",
   "contact.title1": "Have something in mind?",
@@ -138,6 +143,11 @@ const pt: Record<BaseKey, string> = {
   "projects.demo": "Demo ao vivo",
   "projects.hint": "continue rolando para avançar",
   "projects.open": "Abrir estudo de caso:",
+  "projects.all": "Ver todos os projetos",
+  "projects.view": "Ver projeto",
+  "work.title": "Todos os projetos",
+  "work.featured": "Destaque",
+  "work.count": "projetos",
 
   "contact.label": "Contato",
   "contact.title1": "Tem algo em mente?",
