@@ -24,7 +24,7 @@ export default function Hero() {
   const { t, lang } = useLang();
   const roles = useMemo(() => [t("hero.role1"), t("hero.role2")], [lang]); // eslint-disable-line react-hooks/exhaustive-deps
   const role = useTypewriter(roles);
-  const { isDesktop } = useResponsive();
+  const { isMobile, isDesktop } = useResponsive();
   const [badge, setBadge] = useState<BadgeAssets | null>(null);
   const [flipped, setFlipped] = useState(false);
   const [backImage, setBackImage] = useState<string | null>(null);
@@ -33,7 +33,9 @@ export default function Hero() {
 
   // The badge (WebGL + canvas work) starts after the headline has animated in,
   // so that heavy work never competes with the text animation on a reload.
+  // Phones skip the badge entirely, so none of that work is done there.
   useEffect(() => {
+    if (isMobile) return;
     let alive = true;
     const start = () => {
       createBadgeAssets("/img/profileAbout.png", { handle: badgeHandle }).then((assets) => {
@@ -48,7 +50,7 @@ export default function Hero() {
       alive = false;
       clearTimeout(timer);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <section id="home" className="relative min-h-screen px-5 sm:px-8 overflow-hidden">
@@ -63,7 +65,7 @@ export default function Hero() {
 
       <div className="mx-auto w-full max-w-7xl min-h-screen grid lg:grid-cols-[1.1fr_1fr] items-center">
         {/* Copy */}
-        <div className="relative z-10 pt-36 lg:pt-24 pb-6 lg:pb-24 lg:pointer-events-none [&_a]:pointer-events-auto">
+        <div className="relative z-10 pt-32 pb-28 md:pt-36 md:pb-6 lg:pt-24 lg:pb-24 lg:pointer-events-none [&_a]:pointer-events-auto">
           <h1 className="mt-6 text-[clamp(2.25rem,4.4vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.04em] text-neutral-900">
             <SplitText text={t("hero.title")} />
           </h1>
@@ -113,31 +115,33 @@ export default function Hero() {
           </motion.ul>
         </div>
 
-        {/* Badge: hangs from the very top of the page, right below the menu bar */}
-        <div className="relative h-[560px] sm:h-[640px] -mx-5 sm:-mx-8 lg:absolute lg:inset-0 lg:h-auto lg:mx-0">
-          <div
-            aria-hidden="true"
-            className="absolute left-1/2 lg:left-[73%] top-[56%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] rounded-full bg-[#0071e3]/[0.12] blur-3xl"
-          />
-          {badge && (
-            <Lanyard
-              frontImage={badge.front}
-              backImage={backImage || badge.back}
-              onFlip={setFlipped}
-              strapImage={badge.strap}
-              strapColor="#0b0b0d"
-              cardColor="#ffffff"
-              finish="glossy"
-              cornerRadius={0.3}
-              size={0.6}
-              anchor={isDesktop ? "right" : "center"}
-              strapLength={0.46}
-              strapWidth={0.75}
-              metal="silver"
-              breeze={0.4}
+        {/* Badge: hangs from the very top of the page, right below the menu bar. Not shown on phones. */}
+        {!isMobile && (
+          <div className="relative h-[560px] sm:h-[640px] -mx-5 sm:-mx-8 lg:absolute lg:inset-0 lg:h-auto lg:mx-0">
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 lg:left-[73%] top-[56%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] rounded-full bg-[#0071e3]/[0.12] blur-3xl"
             />
-          )}
-        </div>
+            {badge && (
+              <Lanyard
+                frontImage={badge.front}
+                backImage={backImage || badge.back}
+                onFlip={setFlipped}
+                strapImage={badge.strap}
+                strapColor="#0b0b0d"
+                cardColor="#ffffff"
+                finish="glossy"
+                cornerRadius={0.3}
+                size={0.6}
+                anchor={isDesktop ? "right" : "center"}
+                strapLength={0.46}
+                strapWidth={0.75}
+                metal="silver"
+                breeze={0.4}
+              />
+            )}
+          </div>
+        )}
       </div>
 
       {/* Stack ticker */}

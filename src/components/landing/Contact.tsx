@@ -36,8 +36,8 @@ export default function Contact() {
   return (
     <>
       {/* Call to action */}
-      <section id="contact" className="relative min-h-[80svh] scroll-mt-8 flex items-center">
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 py-24">
+      <section id="contact" className="relative min-h-[60svh] md:min-h-[80svh] scroll-mt-8 flex items-center">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 pt-20 pb-24 md:py-24">
           <Reveal>
             <p className="inline-block text-sm text-neutral-500 bg-[#fafafa] shadow-[0_0_0_5px_#fafafa]">
               {t("contact.label")}
