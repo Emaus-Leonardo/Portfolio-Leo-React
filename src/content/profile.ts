@@ -258,28 +258,6 @@ export const profile: Profile = {
       github: "https://github.com/Emaus-Leonardo/Refresh-Shop-App-Epic7",
     },
     {
-      slug: "lanchonete-pequim",
-      title: "Lanchonete Pequim",
-      technologies: ["Tailwind", "React", "TypeScript"],
-      summary: {
-        en: "Landing page built together with a friend for the Pequim snack bar in Presidente Prudente, using TypeScript, Tailwind CSS and React.",
-        pt: "Landing Page desenvolvida em conjunto com um amigo para a lanchonete pequim de presidente prudente, foi desenvolvido com TypeScript,Tailwind css e React",
-      },
-      image: "/img/lanchonete-pequim.jpg",
-      demo: "https://pequim-lanchonete.vercel.app/",
-    },
-    {
-      slug: "thiago-luna-portfolio",
-      title: "Thiago Luna Portfolio",
-      technologies: ["Tailwind", "React"],
-      summary: {
-        en: "Portfolio built for Thiago Luna in a landing-page style, using Tailwind CSS and React.",
-        pt: "Portfolio Desenvolvido para Thiago Luna no estilo de Landing Page Tailwind css e React",
-      },
-      image: "/img/thiagoLunaPortfolio.jpg",
-      demo: "https://thiagolunaf.com/",
-    },
-    {
       slug: "sakura-sound",
       title: "Sakura Sound",
       technologies: ["Tailwind", "React", "TypeScript", "Nodejs", "Firebase", "Express", "Electron"],
