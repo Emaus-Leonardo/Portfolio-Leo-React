@@ -11,6 +11,10 @@ export interface Project extends ProjectContent {
   index: number;
   /** Same as `image`; kept as the name the UI already uses. */
   img: string;
+  /** CSS object-position for the cover. */
+  imgPosition: string;
+  /** Square thumbnail. */
+  iconImg: string;
   media: MediaBlock[];
 }
 
@@ -19,7 +23,12 @@ export const projects: Project[] = profile.projects.map((p, index) => ({
   id: index + 1,
   index,
   img: p.image,
+  imgPosition: p.imagePosition ?? "top",
+  iconImg: p.icon ?? p.image,
   media: [{ type: "lead", src: p.image, alt: p.title }],
 }));
+
+/** The handful of projects shown on the landing page, in profile order. */
+export const featuredProjects: Project[] = projects.filter((p) => p.featured);
 
 export const findProject = (slug: string | undefined): Project | undefined => projects.find((p) => p.slug === slug);

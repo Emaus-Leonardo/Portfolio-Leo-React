@@ -34,7 +34,7 @@ export default function CaseSidebar({ project, total }: CaseSidebarProps) {
       <div className="surface rounded-2xl p-5">
         <div className="flex items-center gap-4">
           <img
-            src={project.img}
+            src={project.iconImg}
             alt=""
             className="w-16 h-16 rounded-[18px] object-cover object-top ring-1 ring-black/10 shadow-[0_8px_20px_-8px_rgba(0,0,0,0.35)]"
           />

@@ -43,7 +43,12 @@ export interface ProjectContent {
   image: string;
   demo?: string;
   github?: string;
+  /** Shown on the landing page; every project is listed on /work. */
   featured?: boolean;
+  /** CSS object-position of the cover when it is cropped. Defaults to the top, which suits screenshots. */
+  imagePosition?: string;
+  /** Square thumbnail for the case-study panel. Defaults to the cover. */
+  icon?: string;
 }
 
 export interface Profile {
@@ -279,6 +284,7 @@ export const profile: Profile = {
       },
       image: "/img/drsmart.jpg",
       demo: "https://www.drsmartsaude.com.br/",
+      featured: true,
     },
     {
       slug: "duarte-e-cruz-advocacia",
@@ -301,6 +307,7 @@ export const profile: Profile = {
       },
       image: "/img/duarte-cruz-saude.jpg",
       demo: "https://duarteecruzsaude.com.br/",
+      featured: true,
     },
   ],
 };
