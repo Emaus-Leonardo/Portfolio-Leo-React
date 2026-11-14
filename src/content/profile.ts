@@ -35,6 +35,17 @@ export interface Service {
   tags: string[];
 }
 
+/** A design-system screen shown in the case study, under the lead image. */
+export interface DesignScreen {
+  src: string;
+  title: Localized;
+  /** Pixel size of the image, so the page keeps its space while it loads. */
+  width: number;
+  height: number;
+  /** Spans the whole row; otherwise two screens sit side by side. */
+  full?: boolean;
+}
+
 export interface ProjectContent {
   slug: string;
   title: string;
@@ -49,6 +60,8 @@ export interface ProjectContent {
   imagePosition?: string;
   /** Square thumbnail for the case-study panel. Defaults to the cover. */
   icon?: string;
+  /** Design-system sections exported from Figma, in reading order. */
+  designSystem?: DesignScreen[];
 }
 
 export interface Profile {
@@ -270,9 +283,22 @@ export const profile: Profile = {
         en: "Music platform with Firebase integration and a native Windows app, built with Electron and backed by an Express API.",
         pt: "Plataforma de música com integração com Firebase e aplicativo nativo para Windows, feito com Electron e uma API Express.",
       },
-      image: "/img/sakurasound.png",
+      image: "/img/sakura-sound/cover.jpg",
+      imagePosition: "center",
+      icon: "/img/sakura-sound/icon.jpg",
       demo: "https://sakura-sound.vercel.app/",
       featured: true,
+      designSystem: [
+        { src: "/img/sakura-sound/01-brand-guidelines.jpg", title: { en: "Brand guidelines", pt: "Brand guidelines" }, width: 2400, height: 861, full: true },
+        { src: "/img/sakura-sound/02-simbolo.jpg", title: { en: "Symbol", pt: "Símbolo" }, width: 1628, height: 938 },
+        { src: "/img/sakura-sound/03-logo.jpg", title: { en: "Logo", pt: "Logo" }, width: 1628, height: 938 },
+        { src: "/img/sakura-sound/04-processo.jpg", title: { en: "Process", pt: "Processo" }, width: 1628, height: 938 },
+        { src: "/img/sakura-sound/05-cores.jpg", title: { en: "Colors", pt: "Cores" }, width: 1628, height: 938 },
+        { src: "/img/sakura-sound/06-tipografia-figtree.jpg", title: { en: "Typography · Figtree", pt: "Tipografia · Figtree" }, width: 2400, height: 891, full: true },
+        { src: "/img/sakura-sound/07-tipografia-sistema.jpg", title: { en: "Typography · System UI", pt: "Tipografia · System UI" }, width: 2400, height: 891, full: true },
+        { src: "/img/sakura-sound/08-navegador.jpg", title: { en: "Browser", pt: "Navegador" }, width: 1628, height: 938 },
+        { src: "/img/sakura-sound/09-landing.jpg", title: { en: "Landing + process", pt: "Landing + processo" }, width: 1628, height: 938 },
+      ],
     },
     {
       slug: "dr-smart-saude",

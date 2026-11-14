@@ -1,10 +1,11 @@
-import { profile, type ProjectContent } from "../content/profile";
+import { profile, type Localized, type ProjectContent } from "../content/profile";
 
-/** Media blocks of a case study. Only the lead image exists for now. */
+/** Media blocks of a case study: the lead image, then any design-system screens. */
 export type MediaBlock =
   | { type: "lead" | "wide"; src: string; alt: string }
   | { type: "pair"; items: [{ src: string; alt: string }, { src: string; alt: string }] }
-  | { type: "video"; src: string; poster?: string };
+  | { type: "video"; src: string; poster?: string }
+  | { type: "design"; src: string; title: Localized; width: number; height: number; full: boolean };
 
 export interface Project extends ProjectContent {
   id: number;
@@ -25,7 +26,10 @@ export const projects: Project[] = profile.projects.map((p, index) => ({
   img: p.image,
   imgPosition: p.imagePosition ?? "top",
   iconImg: p.icon ?? p.image,
-  media: [{ type: "lead", src: p.image, alt: p.title }],
+  media: [
+    { type: "lead", src: p.image, alt: p.title },
+    ...(p.designSystem ?? []).map((d): MediaBlock => ({ type: "design", ...d, full: !!d.full })),
+  ],
 }));
 
 /** The handful of projects shown on the landing page, in profile order. */
