@@ -286,7 +286,7 @@ export const profile: Profile = {
       image: "/img/sakura-sound/cover.jpg",
       imagePosition: "center",
       icon: "/img/sakura-sound/icon.jpg",
-      demo: "https://sakura-sound.vercel.app/",
+      demo: "https://sakura-sound.com/",
       featured: true,
       designSystem: [
         { src: "/img/sakura-sound/01-brand-guidelines.jpg", title: { en: "Brand guidelines", pt: "Brand guidelines" }, width: 2400, height: 861, full: true },
